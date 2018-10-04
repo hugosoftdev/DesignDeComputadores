@@ -1,0 +1,147 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/simulation/qsim
+Ehard_block
+Z1 w1537825506
+Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 U]E`hi0:`oKa5cWiFZ>hl3
+Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 DPx10 cycloneive 21 cycloneive_components 0 22 7:=`d=[QUY_aUcbj<lC000
+R0
+Z8 8relogio.vho
+Z9 Frelogio.vho
+l0
+L35
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1537825507
+!i10b 1
+Z12 !s108 1537825507.000000
+Z13 !s90 -work|work|relogio.vho|
+Z14 !s107 relogio.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+l65
+L51
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Erelogio
+Z17 w1537902695
+R3
+R7
+R2
+Z18 DPx6 altera 11 dffeas_pack 0 22 Dg`GWTC`^Q8GNSMPeo22;3
+R4
+R5
+R6
+Z19 DPx6 altera 28 altera_primitives_components 0 22 _LNC5n6B?5VN@W;M4Dg@k1
+R0
+R8
+R9
+l0
+L37
+VaKHF3K^>jUSnOA<Wa;S2R1
+!s100 1l1eLiRC6]LY>Hd02>N0A0
+R10
+32
+Z20 !s110 1537902697
+!i10b 1
+Z21 !s108 1537902697.000000
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R3
+R7
+R2
+R18
+R4
+R5
+R6
+R19
+DEx4 work 7 relogio 0 22 aKHF3K^>jUSnOA<Wa;S2R1
+l238
+L54
+VHac09INWJ=l2fK]GH3YV:0
+!s100 ^dPZR5hReEjP_THbaT=0z2
+R10
+32
+R20
+!i10b 1
+R21
+R13
+R14
+!i113 1
+R15
+R16
+Erelogio_vhd_vec_tst
+Z22 w1537902694
+R5
+R6
+R0
+Z23 8Waveform10.vwf.vht
+Z24 FWaveform10.vwf.vht
+l0
+L32
+V<gOk6D1VGJQD`F=bE@c>A1
+!s100 ZiVeX1cEfACR]F<OXaF`>0
+R10
+32
+R20
+!i10b 1
+R21
+Z25 !s90 -work|work|Waveform10.vwf.vht|
+Z26 !s107 Waveform10.vwf.vht|
+!i113 1
+R15
+R16
+Arelogio_arch
+R5
+R6
+Z27 DEx4 work 19 relogio_vhd_vec_tst 0 22 <gOk6D1VGJQD`F=bE@c>A1
+l65
+L34
+Z28 VmkhezYkeCAa`FXJUFiij;3
+Z29 !s100 3O<>[mX5hoB7Ye8`m=_>h0
+R10
+32
+R20
+!i10b 1
+R21
+R25
+R26
+!i113 1
+R15
+R16

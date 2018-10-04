@@ -5,12 +5,17 @@ use IEEE.NUMERIC_STD.ALL;
 entity relogio is
 	port(
 		CLOCK_50:  in std_logic;
-		HEX2 : out std_logic_vector(3 downto 0); --US
-		HEX3 : out std_logic_vector(3 downto 0); --DS
-		HEX4 : out std_logic_vector(3 downto 0); --UM
-		HEX5 : out std_logic_vector(3 downto 0); --DM
-		HEX6 : out std_logic_vector(3 downto 0); -- UH
-		HEX7 : out std_logic_vector(3 downto 0) -- DH
+		HEX2 : out std_logic_vector(6 downto 0); --US
+		HEX3 : out std_logic_vector(6 downto 0); --DS
+		HEX4 : out std_logic_vector(6 downto 0); --UM
+		HEX5 : out std_logic_vector(6 downto 0); --DM
+		HEX6 : out std_logic_vector(6 downto 0); -- UH
+		HEX7 : out std_logic_vector(6 downto 0); -- DH
+		aluDebug: out std_logic_vector(3 downto 0);
+		outputDebug: out std_logic_vector(8 downto 0);
+		zeroFlagDebug: out std_logic;
+		zeroDisplayDebug: out std_logic;
+		pcDebug: out std_logic_vector(3 downto 0)
 		);
 end entity;
 
@@ -29,16 +34,17 @@ component Registrador is
 end component;
 
 component dmux is
+    generic
+    (dataSize : natural := 4);
 	 Port ( 
-	 clk: in std_logic;
-	 o1 : out std_logic_vector(3 downto 0);
-	 o2 : out std_logic_vector(3 downto 0);
-	 o3 : out std_logic_vector(3 downto 0);
-	 o4 : out std_logic_vector(3 downto 0);
-	 o5 : out std_logic_vector(3 downto 0);
-	 o6 : out std_logic_vector(3 downto 0);
+	 o1 : out std_logic_vector((dataSize-1) downto 0);
+	 o2 : out std_logic_vector((dataSize-1) downto 0);
+	 o3 : out std_logic_vector((dataSize-1) downto 0);
+	 o4 : out std_logic_vector((dataSize-1) downto 0);
+	 o5 : out std_logic_vector((dataSize-1) downto 0);
+	 o6 : out std_logic_vector((dataSize-1) downto 0);
 	 sel : in std_logic_vector(2 downto 0);
-	 data : out std_logic_vector(3 downto 0));
+	 data : in std_logic_vector((dataSize-1) downto 0));
 end component;
 
 component conversorHex7Seg is
@@ -62,7 +68,7 @@ component romMif
     );
 
     port (
-        clk: in std_logic;
+     
         addr: in natural range 0 to 2**ADDR_WIDTH-1;
         q: out std_logic_vector (DATA_WIDTH-1 downto 0)
     );
@@ -70,7 +76,6 @@ end component;
 
 component alu is
 	 port ( 
-		 clk: in std_logic;
 		 regA : in std_logic_vector(3 downto 0);
 		 regB : in std_logic_vector(3 downto 0);
 		 func : in STD_LOGIC;
@@ -78,9 +83,17 @@ component alu is
 		 flag: out std_logic);
 end component;
 
+component PCHandler is
+	 Port ( 
+	 clk: in std_logic;
+	 zeroFlag : in std_logic;
+	 zeroDisplay : in std_logic;
+	 pc : in std_logic_vector(3 downto 0);
+	 pcOut : out std_logic_vector(3 downto 0));
+end component;
+
 component mux is
 	 port ( 
-	 clk: in std_logic;
 	 i1 : in std_logic_vector(3 downto 0);
 	 i2 : in std_logic_vector(3 downto 0);
 	 i3 : in std_logic_vector(3 downto 0);
@@ -91,14 +104,20 @@ component mux is
 	 selected : out std_logic_vector(3 downto 0));
 end component;
 
-component divisorGenerico is
-    generic
-    (divisor : natural := 8);
+component ClockPrescaler is
     port(
-        clk         :   in std_logic;
-        saida_clk :   out std_logic
-        );
-end component; -- usado para concertar o clock
+        clock   : in STD_LOGIC; -- 50 Mhz
+        final_clock     : out STD_LOGIC
+    );
+end component;
+
+component zero is
+	 Port ( 
+	 data : in std_logic_vector(3 downto 0);
+	 sel : in std_logic;
+	 result : out std_logic_vector(3 downto 0));
+end component;
+ 
 
 
 -- sinais
@@ -106,6 +125,7 @@ end component; -- usado para concertar o clock
 signal output: std_logic_vector (8 downto 0);
 signal address: integer;
 signal pc: std_logic_vector (3 downto 0);
+signal pcOut: std_logic_vector (3 downto 0);
 signal tempPc: std_logic_vector (3 downto 0);
 signal whichDisplay: std_logic_vector (2 downto 0);
 signal registerBValue: std_logic_vector (3 downto 0);
@@ -114,7 +134,11 @@ signal display: std_logic_vector (3 downto 0);
 signal zeroFlag: std_logic;
 signal zeroDisplay : std_logic;
 signal aluResult: std_logic_vector(3 downto 0);
-signal segmentedResult :std_logic_vector(6 downto 0)
+signal finalAluResult: std_logic_vector(3 downto 0);
+signal segmentedResult :std_logic_vector(6 downto 0);
+signal oneIncrement: std_logic_vector(3 downto 0);
+signal oficialClock: std_logic;
+
 
 --register sinais
 signal r1, r1out: std_logic_vector(3 downto 0);
@@ -129,55 +153,54 @@ signal fixedClock: std_logic;
 
 
 begin
-	process(CLOCK_50) begin
-		if rising_edge(CLOCK_50) then
-			address <= to_integer(unsigned(pc));
+	process(oficialClock) begin
+		if (RISING_EDGE(oficialClock)) then	
+			address <= to_integer(unsigned(pcOut));
 			whichDisplay <= output(8 downto 6);
 			registerBValue <= output(5 downto 2);
 			func <= output(1);
 			zeroDisplay <= output(0);
-			
-			-- se a comparação deu 1 é pq transbordou
-			if ((not zeroFlag) and (not zeroDisplay)) then
-				pc <= '0000';
-			elsif (pc = '1000') then
-				pc <= '0000';
-			else
-				tempPc <= pc;
-				pc <= tempPc + '0001';
-			end if;
-			
-			-- checando se é o comando de zerar o display
-			if(zeroDisplay):
-				aluResult <= '0000'
-			end if;
 		end if;
-	
-		
-		
 	end process;
+	
+	--debug
+	oficialClock <= 	CLOCK_50;
+	aluDebug <= aluResult;
+	outputDebug <= output;
+	zeroFlagDebug <= zeroFlag;
+	zeroDisplayDebug <= zeroDisplay;
+	pcDebug <= pcOut;
+	
 	-- choose command
-	e1: romMif port map (clk => CLOCK_50, addr => address,q => output);
+	e1: romMif port map (addr => address,q => output);
+	--e55: ClockPrescaler port map (clock => CLOCK_50, final_clock => oficialClock );
 	
 	--registers
-	q1:  Regristrador  port map (DIN => r1, ENABLE => '1', CLK => CLOCK_50, RST => '0', DOUT => r1out)
-	q2:  Regristrador  port map (DIN => r2, ENABLE => '1', CLK => CLOCK_50, RST => '0', DOUT => r2out)
-	q3:  Regristrador  port map (DIN => r3, ENABLE => '1', CLK => CLOCK_50, RST => '0', DOUT => r3out)
-	q4:  Regristrador  port map (DIN => r4, ENABLE => '1', CLK => CLOCK_50, RST => '0', DOUT => r4out)
-	q5:  Regristrador  port map (DIN => r5, ENABLE => '1', CLK => CLOCK_50, RST => '0', DOUT => r5out)
-	q6:  Regristrador  port map (DIN => r6, ENABLE => '1', CLK => CLOCK_50, RST => '0', DOUT => r6out)
+	q1:  Registrador  port map (DIN => r1, ENABLE => '1', CLK => oficialClock, RST => '0', DOUT => r1out);
+	q2:  Registrador  port map (DIN => r2, ENABLE => '1', CLK => oficialClock, RST => '0', DOUT => r2out);
+	q3:  Registrador  port map (DIN => r3, ENABLE => '1', CLK => oficialClock, RST => '0', DOUT => r3out);
+	q4:  Registrador  port map (DIN => r4, ENABLE => '1', CLK => oficialClock, RST => '0', DOUT => r4out);
+	q5:  Registrador  port map (DIN => r5, ENABLE => '1', CLK => oficialClock, RST => '0', DOUT => r5out);
+	q6:  Registrador  port map (DIN => r6, ENABLE => '1', CLK => oficialClock, RST => '0', DOUT => r6out);
+	
+	--pc stuffs
+	q7:  Registrador  port map (DIN => pc, ENABLE => '1', CLK => oficialClock, RST => '0', DOUT => pcOut);
+	q8: PCHandler port map(clk => oficialClock, pc => pcOut, zeroFlag => zeroFlag, zeroDisplay => zeroDisplay, pcOut => pc);
 	
 	--- definir qual sinal mandar para alu
-	e2: mux port map(i1 => r1, i2 => r2, i3 => r3,i4 => r4, i5 => r5, i6 => r6,sel => whichDisplay,selected => display);
+	e2: mux port map(i1 => r1out, i2 => r2out, i3 => r3out,i4 => r4out, i5 => r5out, i6 => r6out,sel => whichDisplay,selected => display);
 	
 	-- realizar operacao
 	e3: alu port map (regA => display, regB => registerBValue, func => func, output => aluResult, flag => zeroFlag); 
 	
+	--checa se deve zerar o resultado
+	t1: zero port map (data => aluResult,sel => zeroDisplay, result => finalAluResult);
+	
 	-- transforma a paradinha pra parada certa segmentada
-	e4: conversorHex7Seg port map(dadoHex => aluResult, apaga => '0', negativo => '0', overflow => '0', saida7seg => segmentedResult );
+	e4: conversorHex7Seg port map(dadoHex => finalAluResult, saida7seg => segmentedResult );
 	
 	-- saber para qual registrador/display devolver :D
-	e5: dmux port map(o1 => r1,o2 => r2,o3 => r3,o4 => r4,o5 => r5,o6 => r6, data => aluResult, sel => whichDisplay);
-	e6: dmux port map(o1 => HEX2,o2 => HEX3,o3 => HEX4,o4 => HEX5,o5 => HEX6,o6 => HEX7, data => segmentedResult, sel => whichDisplay );
+	e5: dmux port map(o1 => r1, o2 => r2, o3 => r3, o4 => r4, o5 => r5, o6 => r6, data => finalAluResult, sel => whichDisplay);
+	e6: dmux generic map (dataSize   => 7) port map(o1 => HEX2, o2 => HEX3, o3 => HEX4, o4 => HEX5, o5 => HEX6, o6 => HEX7, data => segmentedResult, sel => whichDisplay );
 	
 end architecture;

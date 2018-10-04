@@ -3,8 +3,8 @@ multiple-line comment  %
  
 -- single-line comment
  
-DEPTH = 9;                   -- The size of data in bits
-WIDTH = 16;                    -- The size of memory in words
+DEPTH = 16;                   -- The size of data in bits
+WIDTH = 9;                    -- The size of memory in words
 ADDRESS_RADIX = BIN;          -- The radix for address values
 DATA_RADIX = BIN;             -- The radix for data values
 CONTENT                       -- start of (address : data pairs)

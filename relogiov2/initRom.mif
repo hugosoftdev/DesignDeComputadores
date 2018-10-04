@@ -1,0 +1,28 @@
+%  multiple-line comment  
+multiple-line comment  %      
+ 
+-- single-line comment
+ 
+DEPTH = 13;                   -- The size of data in bits
+WIDTH = 12;                    -- The size of memory in words
+ADDRESS_RADIX = BIN;          -- The radix for address values
+DATA_RADIX = BIN;             -- The radix for data values
+CONTENT                       -- start of (address : data pairs)
+BEGIN
+ 
+0000 : XXXXXXXXXXXX; 
+0001 : 000000110010;              
+0010 : 000101000011;   
+0011 : 001000110100;   
+0100 : 001011000101;   
+0101 : 010000110110;   
+0110 : 010101000111;	  
+0111 : 011000111000;   
+1000 : 011011001001;   
+1001 : 100000111010;   
+1010 : 100101001011;   
+1011 : 101000111100;   
+1100 : 101001000000;   
+ 
+
+END;

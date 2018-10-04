@@ -14,17 +14,18 @@ end alu;
 architecture alu_arch of alu is
 
 begin
-	case func is
-	 when '1' => 
-		output <= (regA + regB); --addition 
-	 when '0' => 
-		output <= (regA - regB); --subtraction 
-	end case; 
-	if output = '00000000' then
-		flag <= '1';
-	else
-		flag <= '0';
-	end if;
-	
+	process(regA,regB,func,output,flag) begin
+		if (func = '1') then 
+			output <= std_logic_vector(unsigned(regA) + unsigned(regB));
+		else
+			output <= std_logic_vector(unsigned(regA) - unsigned(regB));
+		end if;
+		
+		if (output = "0000") then
+			flag <= '1';
+		else
+			flag <= '0';
+		end if;
+	end process;
   
 end architecture;

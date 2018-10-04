@@ -1,0 +1,147 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/simulation/qsim
+Ehard_block
+Z0 w1538548647
+Z1 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 U]E`hi0:`oKa5cWiFZ>hl3
+Z3 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z6 DPx10 cycloneive 21 cycloneive_components 0 22 7:=`d=[QUY_aUcbj<lC000
+Z7 dC:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio_oficial/simulation/qsim
+Z8 8relogio.vho
+Z9 Frelogio.vho
+l0
+L35
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1538548648
+!i10b 1
+Z12 !s108 1538548648.000000
+Z13 !s90 -work|work|relogio.vho|
+Z14 !s107 relogio.vho|
+!i113 1
+Z15 o-work work
+Z16 tExplicit 1 CvgOpt 0
+Astructure
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+l65
+L51
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Erelogio
+R0
+R2
+R6
+R1
+Z17 DPx6 altera 11 dffeas_pack 0 22 Dg`GWTC`^Q8GNSMPeo22;3
+R3
+R4
+R5
+Z18 DPx6 altera 28 altera_primitives_components 0 22 _LNC5n6B?5VN@W;M4Dg@k1
+R7
+R8
+R9
+l0
+L80
+V7l;fkFdNYY49R>F2=`BaY2
+!s100 MkQSGKz;]iR9RfO>ZV>hO2
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Astructure
+R2
+R6
+R1
+R17
+R3
+R4
+R5
+R18
+DEx4 work 7 relogio 0 22 7l;fkFdNYY49R>F2=`BaY2
+l580
+L211
+VzzIBi;2d[R?J6eLONm:gD1
+!s100 4:=4<[fEYG7jXM?b[LM@A3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Erelogio_vhd_vec_tst
+Z19 w1538548645
+R4
+R5
+R7
+Z20 8Waveform79.vwf.vht
+Z21 FWaveform79.vwf.vht
+l0
+L32
+V<gOk6D1VGJQD`F=bE@c>A1
+!s100 ZiVeX1cEfACR]F<OXaF`>0
+R10
+32
+R11
+!i10b 1
+R12
+Z22 !s90 -work|work|Waveform79.vwf.vht|
+Z23 !s107 Waveform79.vwf.vht|
+!i113 1
+R15
+R16
+Arelogio_arch
+R4
+R5
+Z24 DEx4 work 19 relogio_vhd_vec_tst 0 22 <gOk6D1VGJQD`F=bE@c>A1
+l75
+L34
+V<2G;_Qb`A0C@LY;Th`RMZ0
+!s100 FN6AcUGZRBeOoY4Ah0k5Q3
+R10
+32
+R11
+!i10b 1
+R12
+R22
+R23
+!i113 1
+R15
+R16

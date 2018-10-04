@@ -1,5 +1,5 @@
 Analysis & Synthesis report for relogio
-Thu Sep 20 19:58:05 2018
+Tue Sep 25 16:02:56 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -10,7 +10,34 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: romMif:e1
+ 13. Parameter Settings for User Entity Instance: Registrador:q1
+ 14. Parameter Settings for User Entity Instance: Registrador:q2
+ 15. Parameter Settings for User Entity Instance: Registrador:q3
+ 16. Parameter Settings for User Entity Instance: Registrador:q4
+ 17. Parameter Settings for User Entity Instance: Registrador:q5
+ 18. Parameter Settings for User Entity Instance: Registrador:q6
+ 19. Parameter Settings for User Entity Instance: Registrador:q7
+ 20. Parameter Settings for User Entity Instance: dmux:e5
+ 21. Parameter Settings for User Entity Instance: dmux:e6
+ 22. Port Connectivity Checks: "conversorHex7Seg:e4"
+ 23. Port Connectivity Checks: "Registrador:q7"
+ 24. Port Connectivity Checks: "Registrador:q6"
+ 25. Port Connectivity Checks: "Registrador:q5"
+ 26. Port Connectivity Checks: "Registrador:q4"
+ 27. Port Connectivity Checks: "Registrador:q3"
+ 28. Port Connectivity Checks: "Registrador:q2"
+ 29. Port Connectivity Checks: "Registrador:q1"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
 
 
 
@@ -34,110 +61,111 @@ agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Sep 20 19:58:05 2018           ;
-; Quartus Prime Version       ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
-; Revision Name               ; relogio                                     ;
-; Top-level Entity Name       ; relogio                                     ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Sep 25 16:02:56 2018       ;
+; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
+; Revision Name                      ; relogio                                     ;
+; Top-level Entity Name              ; relogio                                     ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 146                                         ;
+;     Total combinational functions  ; 138                                         ;
+;     Dedicated logic registers      ; 45                                          ;
+; Total registers                    ; 45                                          ;
+; Total pins                         ; 62                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                          ; Setting            ; Default Value      ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; relogio            ; relogio            ;
-; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
-; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
-; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
-; Use smart compilation                                                           ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
-; Enable compact report table                                                     ; Off                ; Off                ;
-; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
-; Preserve fewer node names                                                       ; On                 ; On                 ;
-; OpenCore Plus hardware evaluation                                               ; Enable             ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
-; State Machine Processing                                                        ; Auto               ; Auto               ;
-; Safe State Machine                                                              ; Off                ; Off                ;
-; Extract Verilog State Machines                                                  ; On                 ; On                 ;
-; Extract VHDL State Machines                                                     ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
-; Parallel Synthesis                                                              ; On                 ; On                 ;
-; DSP Block Balancing                                                             ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                 ; On                 ;
-; Power-Up Don't Care                                                             ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
-; Remove Duplicate Registers                                                      ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
-; Optimization Technique                                                          ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                              ; 70                 ; 70                 ;
-; Auto Carry Chains                                                               ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
-; Auto ROM Replacement                                                            ; On                 ; On                 ;
-; Auto RAM Replacement                                                            ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
-; Strict RAM Replacement                                                          ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                           ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
-; Report Parameter Settings                                                       ; On                 ; On                 ;
-; Report Source Assignments                                                       ; On                 ; On                 ;
-; Report Connectivity Checks                                                      ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
-; PowerPlay Power Optimization During Synthesis                                   ; Normal compilation ; Normal compilation ;
-; HDL message level                                                               ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
-; Clock MUX Protection                                                            ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
-; Block Design Naming                                                             ; Auto               ; Auto               ;
-; SDC constraint protection                                                       ; Off                ; Off                ;
-; Synthesis Effort                                                                ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
-+---------------------------------------------------------------------------------+--------------------+--------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; relogio            ; relogio            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
+; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
 
 
 +------------------------------------------+
@@ -149,11 +177,416 @@ agreement for further details.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+; relogio.vhd                      ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd          ;         ;
+; romMif.vhd                       ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/romMif.vhd           ;         ;
+; alu.vhd                          ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/alu.vhd              ;         ;
+; mux.vhd                          ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd              ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/conversorHex7Seg.vhd ;         ;
+; Registrador.vhd                  ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/Registrador.vhd      ;         ;
+; dmux.vhd                         ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd             ;         ;
+; zero.vhd                         ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/zero.vhd             ;         ;
+; PCHandler.vhd                    ; yes             ; User VHDL File  ; C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/PCHandler.vhd        ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 146            ;
+;                                             ;                ;
+; Total combinational functions               ; 138            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 34             ;
+;     -- 3 input functions                    ; 85             ;
+;     -- <=2 input functions                  ; 19             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 134            ;
+;     -- arithmetic mode                      ; 4              ;
+;                                             ;                ;
+; Total registers                             ; 45             ;
+;     -- Dedicated logic registers            ; 45             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 62             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 45             ;
+; Total fan-out                               ; 640            ;
+; Average fan-out                             ; 2.08           ;
++---------------------------------------------+----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name          ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+------------------+--------------+
+; |relogio                   ; 138 (2)             ; 45 (13)                   ; 0           ; 0            ; 0       ; 0         ; 62   ; 0            ; |relogio                     ; relogio          ; work         ;
+;    |PCHandler:q8|          ; 9 (9)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|PCHandler:q8        ; PCHandler        ; work         ;
+;    |Registrador:q1|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|Registrador:q1      ; Registrador      ; work         ;
+;    |Registrador:q2|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|Registrador:q2      ; Registrador      ; work         ;
+;    |Registrador:q3|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|Registrador:q3      ; Registrador      ; work         ;
+;    |Registrador:q4|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|Registrador:q4      ; Registrador      ; work         ;
+;    |Registrador:q5|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|Registrador:q5      ; Registrador      ; work         ;
+;    |Registrador:q6|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|Registrador:q6      ; Registrador      ; work         ;
+;    |Registrador:q7|        ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|Registrador:q7      ; Registrador      ; work         ;
+;    |alu:e3|                ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|alu:e3              ; alu              ; work         ;
+;    |conversorHex7Seg:e4|   ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|conversorHex7Seg:e4 ; conversorHex7Seg ; work         ;
+;    |dmux:e5|               ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|dmux:e5             ; dmux             ; work         ;
+;    |dmux:e6|               ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|dmux:e6             ; dmux             ; work         ;
+;    |mux:e2|                ; 21 (21)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|mux:e2              ; mux              ; work         ;
+;    |romMif:e1|             ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|romMif:e1           ; romMif           ; work         ;
+;    |zero:t1|               ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |relogio|zero:t1             ; zero             ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; dmux:e6|o1[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o1[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o1[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o1[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o1[4]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o1[5]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o1[6]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o2[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o2[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o2[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o2[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o2[4]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o2[5]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o2[6]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o3[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o3[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o3[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o3[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o3[4]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o3[5]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o3[6]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o4[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o4[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o4[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o4[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o4[4]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o4[5]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o4[6]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o5[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o5[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o5[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o5[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o5[4]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o5[5]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o5[6]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o6[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o6[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o6[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o6[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o6[4]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o6[5]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e6|o6[6]                                       ; dmux:e6|Equal0      ; yes                    ;
+; mux:e2|selected[0]                                  ; mux:e2|selected[3]  ; yes                    ;
+; mux:e2|selected[1]                                  ; mux:e2|selected[3]  ; yes                    ;
+; mux:e2|selected[2]                                  ; mux:e2|selected[3]  ; yes                    ;
+; mux:e2|selected[3]                                  ; mux:e2|selected[3]  ; yes                    ;
+; dmux:e5|o2[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o3[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o1[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o4[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o5[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o6[0]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o3[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o2[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o1[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o4[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o5[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o6[1]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o2[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o3[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o1[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o4[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o5[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o6[2]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o3[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o2[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o1[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o4[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o5[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; dmux:e5|o6[3]                                       ; dmux:e6|Equal0      ; yes                    ;
+; Number of user-specified and inferred latches = 70  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; PCHandler:q8|oneIncrement[0]          ; Stuck at VCC due to stuck port data_in ;
+; PCHandler:q8|oneIncrement[1..3]       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 45    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |relogio|PCHandler:q8|pcOut[0] ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |relogio|mux:e2|selected[3]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: romMif:e1 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; data_width     ; 9     ; Signed Integer                ;
+; addr_width     ; 4     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Registrador:q1 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Registrador:q2 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Registrador:q3 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Registrador:q4 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Registrador:q5 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Registrador:q6 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Registrador:q7 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; larguradados   ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dmux:e5 ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; datasize       ; 4     ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dmux:e6 ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; datasize       ; 7     ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "conversorHex7Seg:e4" ;
++----------+-------+----------+-------------------+
+; Port     ; Type  ; Severity ; Details           ;
++----------+-------+----------+-------------------+
+; apaga    ; Input ; Info     ; Stuck at GND      ;
+; negativo ; Input ; Info     ; Stuck at GND      ;
+; overflow ; Input ; Info     ; Stuck at GND      ;
++----------+-------+----------+-------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "Registrador:q7" ;
++--------+-------+----------+----------------+
+; Port   ; Type  ; Severity ; Details        ;
++--------+-------+----------+----------------+
+; enable ; Input ; Info     ; Stuck at VCC   ;
+; rst    ; Input ; Info     ; Stuck at GND   ;
++--------+-------+----------+----------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "Registrador:q6" ;
++--------+-------+----------+----------------+
+; Port   ; Type  ; Severity ; Details        ;
++--------+-------+----------+----------------+
+; enable ; Input ; Info     ; Stuck at VCC   ;
+; rst    ; Input ; Info     ; Stuck at GND   ;
++--------+-------+----------+----------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "Registrador:q5" ;
++--------+-------+----------+----------------+
+; Port   ; Type  ; Severity ; Details        ;
++--------+-------+----------+----------------+
+; enable ; Input ; Info     ; Stuck at VCC   ;
+; rst    ; Input ; Info     ; Stuck at GND   ;
++--------+-------+----------+----------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "Registrador:q4" ;
++--------+-------+----------+----------------+
+; Port   ; Type  ; Severity ; Details        ;
++--------+-------+----------+----------------+
+; enable ; Input ; Info     ; Stuck at VCC   ;
+; rst    ; Input ; Info     ; Stuck at GND   ;
++--------+-------+----------+----------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "Registrador:q3" ;
++--------+-------+----------+----------------+
+; Port   ; Type  ; Severity ; Details        ;
++--------+-------+----------+----------------+
+; enable ; Input ; Info     ; Stuck at VCC   ;
+; rst    ; Input ; Info     ; Stuck at GND   ;
++--------+-------+----------+----------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "Registrador:q2" ;
++--------+-------+----------+----------------+
+; Port   ; Type  ; Severity ; Details        ;
++--------+-------+----------+----------------+
+; enable ; Input ; Info     ; Stuck at VCC   ;
+; rst    ; Input ; Info     ; Stuck at GND   ;
++--------+-------+----------+----------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "Registrador:q1" ;
++--------+-------+----------+----------------+
+; Port   ; Type  ; Severity ; Details        ;
++--------+-------+----------+----------------+
+; enable ; Input ; Info     ; Stuck at VCC   ;
+; rst    ; Input ; Info     ; Stuck at GND   ;
++--------+-------+----------+----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 62                          ;
+; cycloneiii_ff         ; 45                          ;
+;     plain             ; 45                          ;
+; cycloneiii_lcell_comb ; 140                         ;
+;     arith             ; 4                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 3                           ;
+;     normal            ; 136                         ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 82                          ;
+;         4 data inputs ; 34                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.30                        ;
+; Average LUT depth     ; 3.19                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,64 +595,161 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Thu Sep 20 19:57:38 2018
+    Info: Processing started: Tue Sep 25 16:02:29 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off relogio -c relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Error (10500): VHDL syntax error at relogio.vhd(120) near text "signal";  expecting ";", or ":=", or "bus", or "register" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 120
-Error (10500): VHDL syntax error at relogio.vhd(142) near text "'";  expecting "(", or an identifier, or  unary operator File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 142
-Error (10500): VHDL syntax error at relogio.vhd(143) near text "'";  expecting "(", or an identifier, or  unary operator File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 143
-Error (10500): VHDL syntax error at relogio.vhd(144) near text "'";  expecting "(", or an identifier, or  unary operator File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 144
-Error (10500): VHDL syntax error at relogio.vhd(147) near text "'";  expecting "(", or an identifier, or  unary operator File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 147
-Error (10500): VHDL syntax error at relogio.vhd(151) near text ":";  expecting "then" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 151
-Error (10500): VHDL syntax error at relogio.vhd(164) near text "q2";  expecting ";" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 164
-Error (10500): VHDL syntax error at relogio.vhd(165) near text "q3";  expecting ";" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 165
-Error (10500): VHDL syntax error at relogio.vhd(166) near text "q4";  expecting ";" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 166
-Error (10500): VHDL syntax error at relogio.vhd(167) near text "q5";  expecting ";" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 167
-Error (10500): VHDL syntax error at relogio.vhd(168) near text "q6";  expecting ";" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 168
-Error (10500): VHDL syntax error at relogio.vhd(171) near text "e2";  expecting ";" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/relogio.vhd Line: 171
-Info (12021): Found 0 design units, including 0 entities, in source file relogio.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
+    Info (12022): Found design unit 1: relogio-arch File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 22
+    Info (12023): Found entity 1: relogio File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file rommif.vhd
-    Info (12022): Found design unit 1: romMif-initFileROM File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/romMif.vhd Line: 20
-    Info (12023): Found entity 1: romMif File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/romMif.vhd Line: 5
-Error (10500): VHDL syntax error at alu.vhd(18) near text "case";  expecting "end", or "(", or an identifier ("case" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/alu.vhd Line: 18
-Error (10500): VHDL syntax error at alu.vhd(21) near text "when";  expecting "end", or "(", or an identifier ("when" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/alu.vhd Line: 21
-Error (10500): VHDL syntax error at alu.vhd(23) near text "case";  expecting ";", or an identifier ("case" is a reserved keyword), or "architecture" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/alu.vhd Line: 23
-Error (10500): VHDL syntax error at alu.vhd(26) near text "else";  expecting "end", or "(", or an identifier ("else" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/alu.vhd Line: 26
-Error (10500): VHDL syntax error at alu.vhd(28) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/alu.vhd Line: 28
-Info (12021): Found 0 design units, including 0 entities, in source file alu.vhd
-Error (10500): VHDL syntax error at mux.vhd(20) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 20
-Error (10500): VHDL syntax error at mux.vhd(20) near text "then";  expecting "<=" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 20
-Error (10500): VHDL syntax error at mux.vhd(23) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 23
-Error (10500): VHDL syntax error at mux.vhd(25) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 25
-Error (10500): VHDL syntax error at mux.vhd(27) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 27
-Error (10500): VHDL syntax error at mux.vhd(29) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 29
-Error (10500): VHDL syntax error at mux.vhd(31) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 31
-Error (10500): VHDL syntax error at mux.vhd(33) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/mux.vhd Line: 33
-Info (12021): Found 0 design units, including 0 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: romMif-initFileROM File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/romMif.vhd Line: 20
+    Info (12023): Found entity 1: romMif File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/romMif.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-alu_arch File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/alu.vhd Line: 14
+    Info (12023): Found entity 1: alu File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/alu.vhd Line: 5
+Warning (12090): Entity "mux" obtained from "mux.vhd" instead of from Quartus Prime megafunction library File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: mux-mux_arch File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 17
+    Info (12023): Found entity 1: mux File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/conversorHex7Seg.vhd Line: 17
-    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/conversorHex7Seg.vhd Line: 4
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/conversorHex7Seg.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
-    Info (12022): Found design unit 1: Registrador-comportamento File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/Registrador.vhd Line: 14
-    Info (12023): Found entity 1: Registrador File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/Registrador.vhd Line: 4
+    Info (12022): Found design unit 1: Registrador-comportamento File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/Registrador.vhd Line: 14
+    Info (12023): Found entity 1: Registrador File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/Registrador.vhd Line: 4
 Info (12021): Found 3 design units, including 1 entities, in source file divisorgenerico.vhd
-    Info (12022): Found design unit 1: divisorGenerico-divisaoPor2 File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/divisorGenerico.vhd Line: 14
-    Info (12022): Found design unit 2: divisorGenerico-divisaoGenerica File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/divisorGenerico.vhd Line: 27
-    Info (12023): Found entity 1: divisorGenerico File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/divisorGenerico.vhd Line: 5
-Error (10500): VHDL syntax error at dmux.vhd(20) near text "if";  expecting "end", or "(", or an identifier ("if" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 20
-Error (10500): VHDL syntax error at dmux.vhd(20) near text "then";  expecting "<=" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 20
-Error (10500): VHDL syntax error at dmux.vhd(23) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 23
-Error (10500): VHDL syntax error at dmux.vhd(25) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 25
-Error (10500): VHDL syntax error at dmux.vhd(27) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 27
-Error (10500): VHDL syntax error at dmux.vhd(29) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 29
-Error (10500): VHDL syntax error at dmux.vhd(31) near text "elsif";  expecting "end", or "(", or an identifier ("elsif" is a reserved keyword), or a concurrent statement File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 31
-Error (10500): VHDL syntax error at dmux.vhd(33) near text "if";  expecting ";", or an identifier ("if" is a reserved keyword), or "architecture" File: C:/Users/Hugo/Documents/GitHub/designdecomp/relogio/dmux.vhd Line: 33
-Info (12021): Found 0 design units, including 0 entities, in source file dmux.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 33 errors, 1 warning
-    Error: Peak virtual memory: 4859 megabytes
-    Error: Processing ended: Thu Sep 20 19:58:05 2018
-    Error: Elapsed time: 00:00:27
-    Error: Total CPU time (on all processors): 00:00:59
+    Info (12022): Found design unit 1: divisorGenerico-divisaoPor2 File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/divisorGenerico.vhd Line: 14
+    Info (12022): Found design unit 2: divisorGenerico-divisaoGenerica File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/divisorGenerico.vhd Line: 27
+    Info (12023): Found entity 1: divisorGenerico File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/divisorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file dmux.vhd
+    Info (12022): Found design unit 1: dmux-dmux_arch File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 19
+    Info (12023): Found entity 1: dmux File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file zero.vhd
+    Info (12022): Found design unit 1: zero-zero_arch File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/zero.vhd Line: 12
+    Info (12023): Found entity 1: zero File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/zero.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file clockprescaler.vhd
+    Info (12022): Found design unit 1: ClockPrescaler-Behavioral File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/ClockPrescaler.vhd Line: 12
+    Info (12023): Found entity 1: ClockPrescaler File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/ClockPrescaler.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pchandler.vhd
+    Info (12022): Found design unit 1: PCHandler-PCHandler_arch File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/PCHandler.vhd Line: 14
+    Info (12023): Found entity 1: PCHandler File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/PCHandler.vhd Line: 5
+Info (12127): Elaborating entity "relogio" for the top level hierarchy
+Info (12128): Elaborating entity "romMif" for hierarchy "romMif:e1" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 175
+Warning (10541): VHDL Signal Declaration warning at romMif.vhd(23): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/romMif.vhd Line: 23
+Info (12128): Elaborating entity "Registrador" for hierarchy "Registrador:q1" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 179
+Info (12128): Elaborating entity "PCHandler" for hierarchy "PCHandler:q8" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 188
+Info (12128): Elaborating entity "mux" for hierarchy "mux:e2" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 191
+Warning (10631): VHDL Process Statement warning at mux.vhd(19): inferring latch(es) for signal or variable "selected", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+Info (10041): Inferred latch for "selected[0]" at mux.vhd(19) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+Info (10041): Inferred latch for "selected[1]" at mux.vhd(19) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+Info (10041): Inferred latch for "selected[2]" at mux.vhd(19) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+Info (10041): Inferred latch for "selected[3]" at mux.vhd(19) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+Info (12128): Elaborating entity "alu" for hierarchy "alu:e3" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 194
+Info (12128): Elaborating entity "zero" for hierarchy "zero:t1" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 197
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:e4" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 200
+Info (12128): Elaborating entity "dmux" for hierarchy "dmux:e5" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 203
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o1", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o2", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o3", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o4", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o5", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o6", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (12128): Elaborating entity "dmux" for hierarchy "dmux:e6" File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 204
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o1", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o2", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o3", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o4", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o5", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Warning (10631): VHDL Process Statement warning at dmux.vhd(21): inferring latch(es) for signal or variable "o6", which holds its previous value in one or more paths through the process File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[4]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[5]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o6[6]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[4]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[5]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o5[6]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[4]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[5]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o4[6]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[4]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[5]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o3[6]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[4]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[5]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o2[6]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[0]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[1]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[2]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[3]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[4]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[5]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (10041): Inferred latch for "o1[6]" at dmux.vhd(21) File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/dmux.vhd Line: 21
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "romMif:e1|content" is uninferred due to inappropriate RAM size File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/romMif.vhd Line: 23
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/initROM.mif" contains "don't care" values -- overwriting them with 0s
+Warning (13012): Latch mux:e2|selected[0] has unsafe behavior File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal whichDisplay[2] File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 157
+Warning (13012): Latch mux:e2|selected[1] has unsafe behavior File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal whichDisplay[2] File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 157
+Warning (13012): Latch mux:e2|selected[2] has unsafe behavior File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal whichDisplay[2] File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 157
+Warning (13012): Latch mux:e2|selected[3] has unsafe behavior File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/mux.vhd Line: 19
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal whichDisplay[2] File: C:/Users/Hugo/Documents/GitHub/DesignDeComputadores/relogio/relogio.vhd Line: 157
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 239 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 61 output pins
+    Info (21061): Implemented 177 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 4810 megabytes
+    Info: Processing ended: Tue Sep 25 16:02:56 2018
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:01:00
 
 

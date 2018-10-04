@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'whichDisplay[1]'
+Slack : -4.648
+TNS   : -217.379
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -3.902
+TNS   : -82.844
+
+Type  : Slow 1200mV 85C Model Setup 'ClockPrescaler:e55|newClock'
+Slack : -2.056
+TNS   : -39.339
+
+Type  : Slow 1200mV 85C Model Hold 'whichDisplay[1]'
+Slack : 0.262
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ClockPrescaler:e55|newClock'
+Slack : 0.406
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.410
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ClockPrescaler:e55|newClock'
+Slack : -1.285
+TNS   : -64.250
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'whichDisplay[1]'
+Slack : 0.335
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'whichDisplay[1]'
+Slack : -4.368
+TNS   : -192.482
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -3.564
+TNS   : -75.110
+
+Type  : Slow 1200mV 0C Model Setup 'ClockPrescaler:e55|newClock'
+Slack : -1.721
+TNS   : -29.809
+
+Type  : Slow 1200mV 0C Model Hold 'ClockPrescaler:e55|newClock'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'whichDisplay[1]'
+Slack : 0.370
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -36.410
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ClockPrescaler:e55|newClock'
+Slack : -1.285
+TNS   : -64.250
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'whichDisplay[1]'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'whichDisplay[1]'
+Slack : -1.789
+TNS   : -76.189
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.422
+TNS   : -26.904
+
+Type  : Fast 1200mV 0C Model Setup 'ClockPrescaler:e55|newClock'
+Slack : -0.966
+TNS   : -6.654
+
+Type  : Fast 1200mV 0C Model Hold 'whichDisplay[1]'
+Slack : -0.196
+TNS   : -0.630
+
+Type  : Fast 1200mV 0C Model Hold 'ClockPrescaler:e55|newClock'
+Slack : 0.183
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.196
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -30.778
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ClockPrescaler:e55|newClock'
+Slack : -1.000
+TNS   : -50.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'whichDisplay[1]'
+Slack : 0.206
+TNS   : 0.000
+
+------------------------------------------------------------
